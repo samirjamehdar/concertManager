@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="432.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databas_gruppupp.FXLoginTest.LoggedInController">
+   <children>
+      <ImageView fx:id="imageView" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/img.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="-1.0">
+         <children>
+            <HBox alignment="CENTER" layoutY="37.0" prefHeight="599.0" prefWidth="1000.0">
+               <children>
+                  <AnchorPane maxHeight="456.0" prefHeight="456.0" prefWidth="800.0" style="-fx-background-color: #ffffff; -fx-background-radius: 40;">
+                     <children>
+                        <Label fx:id="labelBigLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="13.0" prefHeight="49.0" prefWidth="750.0" style="-fx-background-color: #DCDCDC;" text="Bokningar" AnchorPane.leftAnchor="25.0">
+                           <font>
+                              <Font name="UD Digi Kyokasho N-B" size="33.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelWelcome" layoutX="206.0" layoutY="395.0" text="Dina bokningar">
+                           <font>
+                              <Font name="Calibri" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="buttonLogout" layoutX="670.0" layoutY="21.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="99.0" style="-fx-background-color: c052ff;" text="Logga ut" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Button>
+                        <ComboBox fx:id="consertChoiseBox" layoutX="600.0" layoutY="89.0" onAction="#select" prefHeight="25.0" prefWidth="170.0" promptText="Välj konsert" />
+                        <Label fx:id="labelAddress" layoutX="605.0" layoutY="140.0" minWidth="50.0" prefHeight="20.0" />
+                        <Label fx:id="labelArena" alignment="TOP_LEFT" layoutX="605.0" layoutY="120.0" minWidth="50.0" opacity="0.93" prefHeight="20.0" />
+                        <Label fx:id="concertPrice" alignment="TOP_LEFT" layoutX="605.0" layoutY="160.0" minWidth="50.0" opacity="0.93" prefHeight="20.0" />
+                        <Button fx:id="bookButton" contentDisplay="CENTER" layoutX="600.0" layoutY="200.0" mnemonicParsing="false" onAction="#bookConcert" prefHeight="25.0" prefWidth="105.0" text="Boka" />
+                        <Button fx:id="deleteButton" contentDisplay="CENTER" layoutX="600.0" layoutY="230.0" mnemonicParsing="false" onAction="#deleteConcert" prefHeight="25.0" prefWidth="105.0" text="Avboka" />
+                        <TableView fx:id="tableView" layoutX="38.0" layoutY="89.0" prefHeight="298.0" prefWidth="530.0">
+                          <columns>
+                            <TableColumn fx:id="concertCol" prefWidth="113.0" text="Konsert" />
+                            <TableColumn fx:id="arenaCol" prefWidth="147.0" text="Arena" />
+                              <TableColumn fx:id="addressCol" prefWidth="212.0" text="Address" />
+                              <TableColumn fx:id="priceCol" prefWidth="55.0" text="Pris" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

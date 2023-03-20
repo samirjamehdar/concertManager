@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!--Här är properties för att konfigurera mot vår databas  -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/wigellsconsert?serverTimezone=UTC</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.username">root</property>
+
+        <!--    Ändra lösenordet i Controller på rad 50 så kan man skapa dummy data från huvudprogrammet    -->
+        <property name="connection.password">potatismos</property>
+        <!--           Om inte måste man skapa en databas vid namn wigellsconsert i förväg            -->
+        <!--           och sedan köra CreateingDummyData om man ska dummydata tillgänglig             -->
+
+        <property name="connection.pool_size">3</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">false</property>
+        <property name="hbm2ddl.auto">update</property>
+
+
+        <!-- Här configgar vi vilka klasser som ska mappas motsvarande tabell i databasen -->
+        <mapping class="com.example.databas_gruppupp.entities.Address"/>
+        <mapping class="com.example.databas_gruppupp.entities.Arena"/>
+        <mapping class="com.example.databas_gruppupp.entities.Concert"/>
+        <mapping class="com.example.databas_gruppupp.entities.Customer"/>
+        <mapping class="com.example.databas_gruppupp.entities.User"/>
+        <mapping class="com.example.databas_gruppupp.entities.WC"/>
+        <mapping class="com.example.databas_gruppupp.entities.CustomerConcert"/>
+
+
+    </session-factory>
+</hibernate-configuration>
